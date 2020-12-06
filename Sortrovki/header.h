@@ -153,3 +153,16 @@ void BinInsert()
     }
     list = list2;
 }
+
+static clock_t timer_start_time{ 0 }, timer_stop_time{ 0 };
+
+void start_timer()
+{
+    timer_start_time = clock();
+}
+
+void stop_timer()
+{
+    timer_stop_time = clock();
+    cout << double(timer_stop_time - timer_start_time) / CLOCKS_PER_SEC << " sec" << endl;
+}
